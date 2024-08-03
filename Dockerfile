@@ -215,7 +215,9 @@ ENV VPN_SERVICE_PROVIDER=pia \
     VERSION_INFORMATION=on \
     TZ= \
     PUID= \
-    PGID=
+    PGID= \
+    # Run as router / gateway for source network
+    ROUTER=
 ENTRYPOINT ["/gluetun-entrypoint"]
 EXPOSE 8000/tcp 8888/tcp 8388/tcp 8388/udp
 HEALTHCHECK --interval=5s --timeout=5s --start-period=10s --retries=3 CMD /gluetun-entrypoint healthcheck
